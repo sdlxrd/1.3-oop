@@ -28,5 +28,5 @@ public:
 	friend bool ComparisionLess(Money f, Money s);
 	friend bool ComparisionEqual(Money f, Money s);
 
-	double multiply(double number);
+	double multiply(double number, Money f);
 };

@@ -15,9 +15,10 @@ namespace UnitTest1
 		TEST_METHOD(TestMethod1)
 		{
 			Money l;
+
 			l.setGrn(10);
-			l.setKop(5);
-			double result = l.multiply(2);
+			l.setKop(50);
+			double result = l.multiply(2, l);
 			Assert::AreEqual(result, 21.0);
 		}
 	};

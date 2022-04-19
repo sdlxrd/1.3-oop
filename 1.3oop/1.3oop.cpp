@@ -7,8 +7,7 @@ using namespace std;
 
 int main()
 {
-    Money f;
-    Money s;
+    Money f, s, p;
 
     double number;
     cout << "number for multiplying = "; cin >> number;
@@ -19,23 +18,15 @@ int main()
     cout << endl;
     cout << "second:" << endl;
     s.Read();
-
-
-    cout << "_______________________" << endl;
+  
     cout << "first "; f.Display();
-    cout << "   |" << endl;
     cout << "second "; s.Display();
-    cout << "  |" << endl;
-    cout << "______________________|" << endl;
-    
 
+    cout << endl << "result of Substraction = " << p.sub(f, s) << endl;
 
-    Money p;
-    p.sub(f, s);
+    cout << "first result of Multiplyin = " << f.multiply(number, f) << endl;
+    cout << "second result of Multiplyin = " << s.multiply(number, s) << endl << endl;
 
-    cout << "first reslult of  ";  f.multiply(number);
-    cout << "second result of "; s.multiply(number);
-    cout << endl;
 
     if (ComparisionGreat(f, s))
         cout << "First Number > Second Number" << endl;
@@ -43,6 +34,7 @@ int main()
         cout << "First Number < Second Number" << endl;
     if (ComparisionEqual(f, s))
         cout << "First Number = Second Number" << endl;
+   
     cout << endl << endl << endl;
     system("pause");
 }

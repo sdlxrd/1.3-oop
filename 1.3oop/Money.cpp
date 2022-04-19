@@ -40,19 +40,16 @@ void Money::Read()
         cin >> y;
     } while (!Init(x, y));
 }
-double Money::multiply(double number)
+double Money::multiply(double number, Money f)
 {
-    int grns = grn;
-    int kops = kop;
-
     double result;
-    result = ((grns * 10 + kops) * number) / 10;
-    cout << "multyplying = " << result << endl;
+    result = (f.change() * number) / 100;
+
     return result;
 }
 int Money::change()
 {
-    int sum = grn * 10 + kop;
+    int sum = grn * 100 + kop;
     return sum;
 }
 
@@ -71,18 +68,16 @@ bool ComparisionEqual(Money f, Money s)
 }
 double Money::sub(Money f, Money s)
 {
-    int first = f.change();
-    int second = s.change();
-    double result = (first - second * 1.0) / 10;
-    cout << endl << "result of substraction = " << result << endl;
+    double result = (f.change() - s.change() * 1.0) / 100;
     return result;
 }
 
 string Money::toString() const
 {
     stringstream sout;
+
     int kops = kop;
-    sout << "number = " << grn  << "," << kops;
+    sout << "number = " << grn  << "," << kops << endl;
  
     return sout.str();
 }
